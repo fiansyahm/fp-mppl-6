@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('mainUserUItest', function () {
+    return "Halo, Selamat datang di tutorial laravel www.malasngoding.com";
+});
+
+Route::resource('mainUserUI', MainUserController::class);
+
+// Route::resource('mainAdminUI', ;
