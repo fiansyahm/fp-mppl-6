@@ -9,14 +9,19 @@ class Evaluasi extends Model
 {
     use HasFactory;
 
+    protected $table= 'evaluasis';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
+        'unit_id',
         'judul',
-        'unit',
-        'tanggal',
         'dokumen',
-        'status'
+        'status',
+        'tanggal'
     ];
 
-
-    protected $table= 'evaluasi';
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'unit_id', 'id');
+    }
 }

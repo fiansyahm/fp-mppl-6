@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Evaluasi;
 use Illuminate\Database\Seeder;
 
 class EvaluasiSeeder extends Seeder
@@ -13,6 +14,6 @@ class EvaluasiSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Evaluasi::factory()->count(10)->create();
     }
 }

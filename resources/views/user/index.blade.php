@@ -1,60 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Main Page</title>
-    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
-</head>
-
-<body>
-    <!-- Sidebar  -->
-    <div class="container">
-        <!--Top Menu & Menu button-->
-        <div class="col-md-3 sidebar">
-            <div class="profile">
-                <!--Profile Image-->
-                <h3>Kepala Unit</h3>
-                <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
-                    alt="profile_picture">
-                <br><br>
-                <p>Nama Kepala Unit</p>
-                <!--Profile Title & Descruption-->
-            </div>
-            <!--Menu item-->
-            <ul>
-                <li>
-                    <a href="">
-                        <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                        <span class="item">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-
-        <div class="welcome">
-            <div class="welcomeContent">
-                <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
-                <span class="item">Selamat Datang, [Nama User]</span>
-            </div>
-        </div>
-
-        <div class></div>
-
+@extends('layouts/sidebar')
+@section('contain')
+<div class="welcome">
+    <div class="welcomeContent">
+        <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+        <span class="item">Selamat Datang, {{$user->nama}}</span>
     </div>
+</div>
+<br><br>
+<div class="dataEvaluasi">
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Judul</th>
+                <th>Unit</th>
+                <th>Tanggal</th>
+                <th class="text-center">Aksi</th>
+            </tr>
+        </thead>
+        @foreach ($list as $evaluasi) <tbody class="bg-white">
+            <tr>
+                <th scope="row">{{ $evaluasi->judul }}</th>
+                <td>{{ $evaluasi->users->jabatan }}</td>
+                <td>{{ $evaluasi->tanggal }}</td>
+                <td class="text-center">
+                    <a class='badge badge-primary' href="#" style="background-color : #007BFF">DETAIL</a>
+            </tr>
+            </tbody>
+        @endforeach
+    </table>
+</div>
 
-    </div>
-
-
-</body>
-
-</html>
+<div class="modal-footer" style="margin-right: 3%;"><button type="button" class="btn btn-primary"
+        style="background-color: #009818; width: 20%;">ADD</button></div>
+@endsection

@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminDetailKinerjaController;
 use App\Http\Controllers\ListEvaluasiKinerjaAkunController;
 use App\Http\Controllers\ListEvaluasiKinerjaController;
 use App\Http\Controllers\TambahEvaluasiController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Evaluasi;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,28 +20,61 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+
+//  $user = Auth::user();
+//     $isAdmin = Auth::user()->isAdmin;
+//     $unit_id = Auth::user()->id;
+//     $list = Evaluasi::where('unit_id', $unit_id)
+//                 ->get();
+//     if($isAdmin==1){
+//         return view('user.index', compact('user', 'list'));
+//     }
+//     else if($isAdmin==0){
+//         return view('admin.index', compact('user', 'list'));
+//     }
+//     else{
+//         return view('dashboard');
+//     }
 });
 
-Route::get('/user', function () {
-    return view('user.index');
+// sementara
+Route::get('/detail1', function () {
+
+    $user = Auth::user();
+        return view('admin.detail1', compact('user'));
 });
 
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     $user = Auth::user();
+//     $isAdmin = Auth::user()->isAdmin;
+//     $unit_id = Auth::user()->id;
+//     $list = Evaluasi::where('unit_id', $unit_id)
+//                 ->get();
+//     if($isAdmin==1){
+//         return view('user.index', compact('user', 'list'));
+//     }
+//     else if($isAdmin==0){
+//         return view('admin.index', compact('user', 'list'));
+//     }
+//     else{
+//         return view('dashboard');
+//     }
+// //    return view('dashboard');
+// })->middleware(['auth'])->name('welcome');
 
 require __DIR__.'/auth.php';
 
-Route::prefix('user')->group(function () {
-    Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index']);
-    Route::get('/tambah', [TambahEvaluasiController::class, 'index']);
-});
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.index');
+Route::group(['middleware' => 'auth'], function() {
+    Route::prefix('user')->group(function () {
+        Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index']);
+        Route::get('/tambah', [TambahEvaluasiController::class, 'index']);
     });
+
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/', [ListEvaluasiKinerjaController::class, 'index']);
+        Route::get('/detail', [AdminDetailKinerjaController::class, 'index'])->name('detail');;
+    });
+
 });

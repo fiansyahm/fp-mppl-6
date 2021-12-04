@@ -15,10 +15,12 @@ class CreateEvaluasisTable extends Migration
     {
         Schema::create('evaluasis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('unit_id')->references('id')->on('users');
             $table->string('judul');
             $table->boolean('status');
-            $table->string('dokumen');
-            $table->timestamp('waktu')->now();
+            $table->string('dokumen')->nullable();
+            $table->string('komentar')->nullable();
+            $table->date('tanggal');
         });
     }
 
