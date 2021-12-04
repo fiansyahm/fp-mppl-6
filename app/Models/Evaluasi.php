@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Evaluasi extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'judul',
+        'unit',
+        'tanggal',
+        'dokumen',
+        'status'
+    ];
+
+
+    protected $table= 'evaluasi';
+}

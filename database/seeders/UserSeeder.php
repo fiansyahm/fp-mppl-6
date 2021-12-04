@@ -18,8 +18,9 @@ class UserSeeder extends Seeder
          $users = [
             [
                 'id'             => 1,
-                'username'       => 'Admin',
-                'name'           => 'admin',
+                'username'       => 'admin',
+                'nama'           => 'Yuhana',
+                'jabatan'         => 'Sekretaris Institut',
                 'password'       => bcrypt('Admin'),
                 'isAdmin'        => 1,
                 'remember_token' => null,

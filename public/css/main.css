@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background: #e6e7ec;
+    height: 100vh;
+}
+
+.sidebar {
+    background: #273238;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.sidebar .profile {
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img {
+    display: box-align;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3 {
+    color: #c1c0da;
+    margin: 10px 0 5px;
+}
+.wrapper .sidebar .profile p {
+    color: #c1c0da;
+    font-size: 14px;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    color: rgb(241, 237, 237);
+    position: relative;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.wrapper .sidebar ul li a .icon {
+    color: #dee4ec;
+    display: inline-block;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.wrapper .sidebar ul li a .item {
+    font-size: 18px;
+    text-align: center;
+}
+
+.wrapper .welcome {
+    width: calc(95% - 384px);
+    margin-top: 100px;
+    margin-left: 424px;
+    background-color: #ffffff;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.wrapper .welcomeContent {
+    display: relative;
+    align-items: center;
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+.wrapper .welcome .welcomeContent .item {
+    font-weight: bolder;
+}
+
+.wrapper .welcome .welcomeContent .icon {
+    padding-right: 40px;
+    font-size: 20px;
+}

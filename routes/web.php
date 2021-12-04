@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ListEvaluasiKinerjaAkunController;
+use App\Http\Controllers\ListEvaluasiKinerjaController;
+use App\Http\Controllers\TambahEvaluasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +20,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/user', function () {
+    return view('user.index');
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::prefix('user')->group(function () {
+    Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index']);
+    Route::get('/tambah', [TambahEvaluasiController::class, 'index']);
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+});
