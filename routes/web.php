@@ -67,14 +67,14 @@ require __DIR__.'/auth.php';
 
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::prefix('user')->group(function () {
+    Route::prefix('user')->name('user.')->group(function () {
         Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index']);
-        Route::get('/tambah', [TambahEvaluasiController::class, 'index']);
+        Route::get('/tambah', [TambahEvaluasiController::class, 'index'])->name('tambah');
     });
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [ListEvaluasiKinerjaController::class, 'index']);
-        Route::get('/detail', [AdminDetailKinerjaController::class, 'index'])->name('detail');;
+        Route::get('/detail/{id}', [AdminDetailKinerjaController::class, 'index'])->name('detail');
     });
 
 });

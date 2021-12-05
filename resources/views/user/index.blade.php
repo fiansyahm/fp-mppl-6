@@ -30,6 +30,8 @@
     </table>
 </div>
 
-<div class="modal-footer" style="margin-right: 3%;"><button type="button" class="btn btn-primary"
-        style="background-color: #009818; width: 20%;">ADD</button></div>
+<div class="modal-footer" style="margin-right: 3%;">
+    <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800"
+        href="{{ route('user.tambah') }}">Tambah Evaluasi</a>
+</div>
 @endsection

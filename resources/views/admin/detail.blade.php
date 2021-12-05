@@ -1,10 +1,10 @@
 @extends('layouts/sidebar')
 @section('contain')
+{{ $list }}
 <div class="detail">
     <h3>Detail Evaluasi</h3>
 </div>
 <div class="docs">
-
     <div class="content">
         <?php
             // if($list->status==1){
@@ -30,24 +30,28 @@
                             echo "<td>Judul Evaluasi</td>"
                         ?>
                         <td>:</td>
-                        <td>Contact Not Linked</td>
+                        <td>{{ $list->judul }}</td>
                     </tr>
                     <tr>
                         <td>Unit</td>
                         <td>:</td>
-                        <td>Kinerja Peningkatan Institusi</td>
+                        <td>{{ $list->users->jabatan }}</td>
                     </tr>
                     <tr>
                         <td>Tanggal Pembuatan</td>
                         <td>:</td>
-                        <td>25 Desember 2021</td>
+                        <td>{{ $list->tanggal}}</td>
                     </tr>
                     <tr></tr>
                     <td>Dokumen Evaluasi Kinerja</td>
                     <td>:</td>
                     <td>
-                        <img src="https://venngage-wordpress.s3.amazonaws.com/uploads/2021/05/Standard-Business-Proposal-Template.jpg"
-                            width="120" height="180">
+                        {{-- <img src="https://venngage-wordpress.s3.amazonaws.com/uploads/2021/05/Standard-Business-Proposal-Template.jpg"
+                            width="120" height="180"> --}}
+                        {{-- <div id='outerdiv' style="width:800px; overflow-x:hidden;">
+                            <iframe src="https://venngage-wordpress.s3.amazonaws.com/uploads/2021/05/Standard-Business-Proposal-Template.jpg" width="120" height="180" frameborder="0" id='inneriframe' scrolling=no>
+                                </iframe>
+                        </div> --}}
                     </td>
                     </tr>
                     <tr></tr>
@@ -62,8 +66,8 @@
             </div>
 
             <div class="col-md-4" style="padding-top:50%">
-                <button type="submit" class="btn btn-primary ml-5">Submit</button>
-                <button type="submit" class="btn btn-primary ml-4">Submit</button>
+                <button type="submit" class="ml-5 btn btn-primary">Submit</button>
+                <button type="submit" class="ml-4 btn btn-primary">Submit</button>
             </div>
             <!-- <div style="margin-right: 3%;"><button type="button" class="align-self-end btn btn-lg btn-primary"
                 style="background-color: #009818">Approve</button>

@@ -23,12 +23,12 @@
                 <td>{{ $evaluasi->users->jabatan }}</td>
                 <td>{{ $evaluasi->tanggal }}</td>
                 <td class="text-center">
-                    <a class='badge badge-primary' href="{{ route('admin.detail', ['list' => $evaluasi]) }}" style="background-color : #007BFF">DETAIL</a>
+                    <a class='badge badge-primary' href="{{ route('admin.detail', ['id' => $evaluasi->id]) }}" style="background-color : #007BFF">DETAIL</a>
             </tr>
         </tbody>
         @endforeach
     </table>
 </div>
 {{-- pagination --}}
-    {{-- {!! $list->links() !!} --}}
+    {!! $list->links() !!}
 @endsection
