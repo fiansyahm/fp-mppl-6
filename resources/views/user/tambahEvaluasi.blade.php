@@ -6,20 +6,22 @@ User
 
 @section('contain')
 
-<form action="{{ route('user.store') }}" method="get" enctype="multipart/form-data">
+<form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
     @csrf
-    <div class="h-screen px-2 py-20 bg-gray-300">
+    <div class="h-screen px-2 py-20">
         <div class="max-w-md mx-auto overflow-hidden bg-white rounded-lg md:max-w-lg">
             <div class="md:flex">
                 <div class="w-full px-4 py-6 ">
                     <div class="mb-1"> <span class="text-sm">Judul</span> <input type="text"
-                            class="w-full h-12 px-3 border-2 border-blue-400 rounded focus:outline-none focus:border-blue-600" name="judul">
+                            class="w-full h-12 px-3 border-2 border-blue-400 rounded focus:outline-none focus:border-blue-600"
+                            name="judul">
                     </div>
                     <div class="mb-1"> <span class="text-sm text-gray-400">You will be able to edit this information
                             later</span> </div>
                     <div>
                         <label for="formFileLg" class="form-label">Upload Dokumen</label>
-                        <input class="form-control form-control-lg" id="formFileLg" type="file" id="dokumen" name="dokumen">
+                        <input class="form-control form-control-lg" id="formFileLg" type="file" id="dokumen"
+                            name="dokumen">
                     </div>
                     <div class="mt-3 text-right"> <a href="#">Cancel</a> <button
                             class="w-32 h-10 ml-2 text-white bg-blue-600 rounded hover:bg-blue-700">Create</button>
@@ -30,7 +32,7 @@ User
     </div>
 </form>
 
-{{-- <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
+<!-- <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="p-3">
 
@@ -58,9 +60,9 @@ User
                     secure</span> </div>
         </div>
         <div class="pb-3 mt-3 text-center"> <button
-                class="w-32 w-full h-12 text-lg text-white bg-blue-600 rounded hover:bg-blue-700">Create</button>
+                class="h-12 text-lg text-white bg-blue-600 rounded hover:bg-blue-700">Create</button>
         </div>
     </div>
-</form> --}}
+</form> -->
 
 @endsection

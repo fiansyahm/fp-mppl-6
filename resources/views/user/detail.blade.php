@@ -10,6 +10,9 @@ User
 <div class="detail">
     <h3>Detail Evaluasi</h3>
 </div>
+<div class="back">
+    <a href="{{ url()->previous() }}">&lt; kembali</a>
+</div>
 <div class="docs">
     <div class="content">
         <?php

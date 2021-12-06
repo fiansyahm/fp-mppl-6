@@ -11,27 +11,26 @@ Admin
         <span class="item">Selamat Datang, {{$user->nama}}</span>
     </div>
 </div>
-<div>
-    <div class="mx-auto pull-right">
-        <div class="">
-            <form action="{{ route('admin.search') }}" method="post" role="search">
-                @csrf
-                <div class="input-group">
-                    <select name="unit_id"
-                        class='block mt-1 border-gray-300 rounded-md shadow-sm w-120 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'>
-                        <option value="1">Semua</option>
-                        <option value="2">Unit Pengelolaan dan Pengendalian Program</option>
-                        <option value="3">Unit Komunikasi Publik</option>
-                        <option value="4">Unit Layanan Hukum dan Pengelolaan Risiko</option>
-                        <option value="5">Kepala Subbagian Administrasi Sekretaris Institut</option>
-                    </select>
-                    <input type="submit" name="simpan" value="Cari">
-                </div>
-            </form>
-        </div>
+<br><br>
+<div class="mx-auto pull-right" style="width: 92%;">
+    <div class="d-flex justify-content-end">
+        <form action="{{ route('admin.search') }}" method="post" role="search">
+            @csrf
+            <div class="input-group">
+                <select name="unit_id"
+                    class='w-40 h-10 mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'>
+                    <option value="1">Semua</option>
+                    <option value="2">Unit Pengelolaan dan Pengendalian Program</option>
+                    <option value="3">Unit Komunikasi Publik</option>
+                    <option value="4">Unit Layanan Hukum dan Pengelolaan Risiko</option>
+                    <option value="5">Kepala Subbagian Administrasi Sekretaris Institut</option>
+                </select>
+                <button type="submit" class="btn btn-primary" name="simpan" value="Cari"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
     </div>
 </div>
-<br><br>
 <div class="dataEvaluasi">
     <table class="table table-striped custab">
         <thead>
@@ -55,6 +54,11 @@ Admin
         @endforeach
     </table>
 </div>
-{{-- pagination --}}
-{!! $list->links() !!}
+<div class="mt-4 d-flex justify-content-center">
+    <br>
+    {{-- pagination --}}
+    {!! $list->links() !!}
+</div>
+
+
 @endsection

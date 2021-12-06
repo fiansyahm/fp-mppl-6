@@ -10,8 +10,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-    /* overflow: hidden; */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+*::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
 
 body {
     background: #e6e7ec;
@@ -139,4 +147,15 @@ thead {
     text-align: left;
     border: hidden;
     height: 100%;
+}
+
+.back {
+    color: #2f00ff;
+    margin-right: 5%;
+    text-align: right;
+    text-decoration: underline;
+}
+
+.center {
+    align-items: center;
 }
