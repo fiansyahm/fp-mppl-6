@@ -3,5 +3,6 @@
 2. composer install
 3. npm install && npm run dev #Linux/MacOS
 4. (npm install) -and (npm run dev) #Windows CMD
-5. php artisan migrate --seed
-6. php artisan serve
+5. Buka file .env, ganti DB_DATABASE dgn nama_database_local
+6. php artisan migrate --seed
+7. php artisan serve
