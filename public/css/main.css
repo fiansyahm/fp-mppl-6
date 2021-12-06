@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js");
 
 * {
     list-style: none;
@@ -118,26 +119,24 @@ thead {
     width: 96%;
     margin-top: 2%;
     background-color: #ffffff;
-    height: 95%;
+    height: 80%;
     border-radius: 10px;
-    display: flex;
-    align-items: top;
+    align-items: center;
+    position: relative;
 }
 
-.docs .content {
-    padding-top: 5%;
-    padding-left: 5%;
+.docsContent {
+    width: 94%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: bolder;
 }
 
 .docsData,
 .docsData tr,
 .docsData td {
+    text-align: left;
     border: hidden;
-}
-
-#btn-rght {
-    position: absolute;
-    right: 5px;
-    bottom: 20px;
+    height: 100%;
 }

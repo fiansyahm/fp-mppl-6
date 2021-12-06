@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDetailKinerjaController;
+use App\Http\Controllers\DetailEvaluasiKinerja;
 use App\Http\Controllers\ListEvaluasiKinerjaAkunController;
 use App\Http\Controllers\ListEvaluasiKinerjaController;
 use App\Http\Controllers\TambahEvaluasiController;
@@ -70,10 +71,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::prefix('user')->name('user.')->group(function () {
         Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index']);
         Route::get('/tambah', [TambahEvaluasiController::class, 'index'])->name('tambah');
+        Route::post('/tambah', [TambahEvaluasiController::class, 'store'])->name('store');
+        Route::get('/detail', [DetailEvaluasiKinerja::class, 'index'])->name('detail');
     });
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [ListEvaluasiKinerjaController::class, 'index']);
+        Route::post('/', [ListEvaluasiKinerjaController::class, 'search'])->name('search');
         Route::get('/detail/{id}', [AdminDetailKinerjaController::class, 'index'])->name('detail');
     });
 

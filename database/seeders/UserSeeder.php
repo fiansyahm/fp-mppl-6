@@ -52,6 +52,15 @@ class UserSeeder extends Seeder
                 'isAdmin'        => 0,
                 'remember_token' => null,
             ],
+            [
+                'id'             => 5,
+                'username'       => 'user4',
+                'nama'           => 'Kurniawan',
+                'jabatan'        => 'Kepala Subbagian Administrasi Sekretaris Institut',
+                'password'       => bcrypt('user4'),
+                'isAdmin'        => 0,
+                'remember_token' => null,
+            ],
         ];
 
         User::insert($users);

@@ -1,4 +1,12 @@
 @extends('layouts/sidebar')
+
+
+@section('title')
+User
+@endsection
+
+
+
 @section('contain')
 <div class="welcome">
     <div class="welcomeContent">
@@ -23,7 +31,7 @@
                 <td>{{ $evaluasi->users->jabatan }}</td>
                 <td>{{ $evaluasi->tanggal }}</td>
                 <td class="text-center">
-                    <a class='badge badge-primary' href="#" style="background-color : #007BFF">DETAIL</a>
+                    <a class='badge badge-primary' href="{{ route('user.detail') }}" style="background-color : #007BFF">DETAIL</a>
             </tr>
             </tbody>
         @endforeach

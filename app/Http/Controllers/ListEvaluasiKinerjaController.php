@@ -24,4 +24,19 @@ class ListEvaluasiKinerjaController extends Controller
             return view('user.index',  compact('user','list'));
         }
     }
+
+    public function search(Request $request)
+    {
+        //dd($request);
+        $user = Auth::user();
+        if ($request->unit_id == 1){
+            $list = Evaluasi::paginate(5);
+             return view('admin.index', compact('user','list'));
+        }else {
+            $list = Evaluasi::where('unit_id', $request->unit_id)
+                    ->paginate(2);
+            // echo $list;
+            return view('admin.index', compact('user','list'));
+        }
+    }
 }

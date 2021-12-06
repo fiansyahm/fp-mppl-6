@@ -14,6 +14,6 @@ class EvaluasiSeeder extends Seeder
      */
     public function run()
     {
-        Evaluasi::factory()->count(10)->create();
+        Evaluasi::factory()->count(20)->create();
     }
 }

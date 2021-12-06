@@ -15,6 +15,12 @@ class EvaluasiFactory extends Factory
     {
         return [
             //
+            'unit_id' => rand(2,5),
+            'judul' => $this->faker->text(20),
+            'status' => rand(0,1),
+            'dokumen' => NULL,
+            'komentar' => NULL,
+            'tanggal' => now(),
         ];
     }
 }

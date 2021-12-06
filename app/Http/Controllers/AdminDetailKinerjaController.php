@@ -23,9 +23,4 @@ class AdminDetailKinerjaController extends Controller
             return view('user.index',  compact('user','list'));
         }
     }
-
-    public function store()
-    {
-        
-    }
 }
