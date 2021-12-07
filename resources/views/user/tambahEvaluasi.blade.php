@@ -8,23 +8,33 @@ User
 
 <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
     @csrf
-    <div class="h-screen px-2 py-20">
-        <div class="max-w-md mx-auto overflow-hidden bg-white rounded-lg md:max-w-lg">
+    <div class="h-screen px-20 py-20">
+        <!-- <div class="back-form">
+            <a href="{{ url()->previous() }}">&lt; <- Kembali</a>
+        </div> -->
+        <div class="mx-auto overflow-hidden bg-white rounded-lg mw-100 md:max-w-lg w-100">
             <div class="md:flex">
-                <div class="w-full px-4 py-6 ">
-                    <div class="mb-1"> <span class="text-sm">Judul</span> <input type="text"
+                <div class="w-full px-4 py-6 w-100">
+                    <div class="mb-1"> <span class="text-sm">Judul</span>
+                        <input type="text"
                             class="w-full h-12 px-3 border-2 border-blue-400 rounded focus:outline-none focus:border-blue-600"
                             name="judul">
                     </div>
-                    <div class="mb-1"> <span class="text-sm text-gray-400">You will be able to edit this information
-                            later</span> </div>
+                    <br><br>
+                    <!-- <div class="mb-1"> <span class="text-sm text-gray-400">You will be able to edit this information
+                            later</span> </div> -->
                     <div>
                         <label for="formFileLg" class="form-label">Upload Dokumen</label>
                         <input class="form-control form-control-lg" id="formFileLg" type="file" id="dokumen"
                             name="dokumen">
                     </div>
-                    <div class="mt-3 text-right"> <a href="#">Cancel</a> <button
-                            class="w-32 h-10 ml-2 text-white bg-blue-600 rounded hover:bg-blue-700">Create</button>
+                    <!-- <div class="file-upload-wrapper">
+                        <input type="file" id="input-file-now-custom-2" class="file-upload"
+                        data-height="1000" >
+                    </div> -->
+                    <div class="mt-5 text-right">
+                        <a href="{{ url()->previous() }}">Cancel</a>
+                        <button class="w-32 h-10 ml-4 text-white bg-blue-600 rounded hover:bg-blue-700">Create</button>
                     </div>
                 </div>
             </div>

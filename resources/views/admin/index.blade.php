@@ -17,16 +17,18 @@ Admin
         <form action="{{ route('admin.search') }}" method="post" role="search">
             @csrf
             <div class="input-group">
-                <select name="unit_id"
-                    class='w-40 h-10 mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'>
-                    <option value="1">Semua</option>
-                    <option value="2">Unit Pengelolaan dan Pengendalian Program</option>
-                    <option value="3">Unit Komunikasi Publik</option>
-                    <option value="4">Unit Layanan Hukum dan Pengelolaan Risiko</option>
-                    <option value="5">Kepala Subbagian Administrasi Sekretaris Institut</option>
-                </select>
-                <button type="submit" class="btn btn-primary" name="simpan" value="Cari"><i
-                        class="fas fa-search"></i></button>
+                <div class="form-outline" style="margin-bottom: 2px;">
+                    <select name="unit_id"
+                        class='w-40 h-10 mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'>
+                        <option value="1">Semua</option>
+                        <option value="2">Unit Pengelolaan dan Pengendalian Program</option>
+                        <option value="3">Unit Komunikasi Publik</option>
+                        <option value="4">Unit Layanan Hukum dan Pengelolaan Risiko</option>
+                        <option value="5">Kepala Subbagian Administrasi Sekretaris Institut</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" name="simpan" value="Cari"
+                        style="margin-bottom: 7px;"><i class="fas fa-search"></i></button>
+                </div>
             </div>
         </form>
     </div>

@@ -31,7 +31,7 @@ User
                 <td>{{ $evaluasi->users->jabatan }}</td>
                 <td>{{ $evaluasi->tanggal }}</td>
                 <td class="text-center">
-                    <a class='badge badge-primary' href="{{ route('user.detail') }}" style="background-color : #007BFF">DETAIL</a>
+                    <a class='badge badge-primary' href="{{ route('user.detail', ['id' => $evaluasi->id]) }}" style="background-color : #007BFF">DETAIL</a>
             </tr>
             </tbody>
         @endforeach

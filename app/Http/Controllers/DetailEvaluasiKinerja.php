@@ -9,14 +9,18 @@ use Illuminate\Support\Facades\Auth;
 class DetailEvaluasiKinerja extends Controller
 {
     //
-    public function index()
+    public function index($id)
     {
         $user =Auth::user();
         $isAdmin =Auth::user()->isAdmin;
-        $unit_id=Auth::user()->id;
+        $list =  Evaluasi::find($id);
 
-        if($isAdmin==0){
-
+        if($isAdmin==1){
+            return view('admin.index', compact('user','list'));
+        }
+        else{
+            return view('user.detail',  compact('user','list'));
         }
     }
+
 }

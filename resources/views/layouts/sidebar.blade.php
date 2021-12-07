@@ -12,6 +12,9 @@
 </head>
 
 <body>
+<div class="container">
+
+</div>
     <div class="row">
         <div class="col-md-3">
             <div class="sidebar">
@@ -29,13 +32,18 @@
                 <div class="menuContainer">
                     <ul>
                         <li class="mt-3">
-                            <a href="">
-                                <span class="icon"><i class="fas fa-home"></i></span>
-                                <span class="item">Home</span>
-                            </a>
+                            @if($user->isAdmin==1)
+                            <a href="/admin">
+                                @else
+                                <a href="/user">
+                                    @endif
+                                    <span class="icon"><i class="fas fa-home"></i></span>
+                                    <span class="item">Home</span>
+                                </a>
                         </li>
                         <li class="mt-3">
                             <a href="/dashboard">
+
                                 <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                                 <!-- <span class="item">Sign Out</span> -->
                                 <span class="item">

@@ -10,16 +10,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 *::-webkit-scrollbar {
     display: none;
-  }
-
-
-
+}
 
 body {
     background: #e6e7ec;
@@ -31,7 +28,7 @@ body {
     background: #273238;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 150%;
 }
 
 .sidebar .profile {
@@ -131,6 +128,7 @@ thead {
     border-radius: 10px;
     align-items: center;
     position: relative;
+    padding-bottom: 5%;
 }
 
 .docsContent {
@@ -152,6 +150,13 @@ thead {
 .back {
     color: #2f00ff;
     margin-right: 5%;
+    text-align: right;
+    text-decoration: underline;
+}
+
+.back-form {
+    color: #2f00ff;
+    margin-right: 23%;
     text-align: right;
     text-decoration: underline;
 }

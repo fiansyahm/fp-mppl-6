@@ -2,83 +2,77 @@
 
 
 @section('title')
-User
+Admin
 @endsection
 
 @section('contain')
-{{ $list }}
 <div class="detail">
     <h3>Detail Evaluasi</h3>
 </div>
 <div class="back">
-    <a href="{{ url()->previous() }}">&lt; kembali</a>
+    <a href="{{ route('user.home') }}">&lt; <- Kembali</a>
 </div>
+
 <div class="docs">
-    <div class="content">
-        <?php
-            // if($list->status==1){
-            //     echo "<b>Udah di approve</b>";
-            // }
-            // else{
-            //     echo "<b>Belum di approve</b>";
-            // }
-            echo "
-            <div class='bg-success' style='height:10%; width:100%;'>
+    <div class="pt-10 docsContent">
+        <!-- <div class="row"> -->
+        <table class="table docsData">
+            <colgroup>
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 5%;">
+                <col span="1" style="width: 75%;">
+            </colgroup>
+            <tr>
+                @if($list->status == 1)
+                <td class="bg-success" colspan="3" style="text-align: left; color: white;">
+                    Data Evaluasi telah disetujui!
+                </td>
+                @elseif ($list->status == -1)
+                <td class="bg-danger" colspan="3" style="text-align: left; color: white;">
+                    Data Evaluasi tidak disetujui!
+                </td>
+                @endif
+            </tr>
+            <tr>
+                <td>Judul Evaluasi</td>
+                <td>:</td>
+                <td>{{ $list->judul }}</td>
+            </tr>
+            <tr>
+                <td>Unit Kerja</td>
+                <td>:</td>
+                <td>{{ $list->users->jabatan }}</td>
+            </tr>
+            <tr>
+                <td>Tanggal Pembuatan</td>
+                <td>:</td>
+                <td>{{ $list->tanggal }}</td>
+            </tr>
+            <tr>
+                <td>Dokumen Evaluasi Kinerja</td>
+                <td>:</td>
+                <td>
+                    <div>
+                        <object data="{{ asset('storage/'. $list->dokumen) }}" type="application/pdf">
+                            <iframe src="{{ asset('storage/'. $list->dokumen) }}" width="20%" height="15%" frameborder="0" marginwidth="0"
+                                marginheight="0" scrolling="no"
+                                style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+                        </object>
+                    </div>
 
-            </div>
-            ";
-        ?>
-        <div class="row">
-            <div class="col-md-9">
+                </td>
+            </tr>
 
-
-                <table class="table docsData">
-                    <tr>
-                        <!-- <td>Judul Evaluasi</td> -->
-                        <?php
-                            echo "<td>Judul Evaluasi</td>"
-                        ?>
-                        <td>:</td>
-                        <td>{{ $list->judul }}</td>
-                    </tr>
-                    <tr>
-                        <td>Unit</td>
-                        <td>:</td>
-                        <td>{{ $list->users->jabatan }}</td>
-                    </tr>
-                    <tr>
-                        <td>Tanggal Pembuatan</td>
-                        <td>:</td>
-                        <td>{{ $list->tanggal}}</td>
-                    </tr>
-                    <tr></tr>
-                    <td>Dokumen Evaluasi Kinerja</td>
-                    <td>:</td>
-                    <td>
-                        {{-- <img
-                            src="https://venngage-wordpress.s3.amazonaws.com/uploads/2021/05/Standard-Business-Proposal-Template.jpg"
-                            width="120" height="180"> --}}
-                        {{-- <div id='outerdiv' style="width:800px; overflow-x:hidden;">
-                            <iframe
-                                src="https://venngage-wordpress.s3.amazonaws.com/uploads/2021/05/Standard-Business-Proposal-Template.jpg"
-                                width="120" height="180" frameborder="0" id='inneriframe' scrolling=no>
-                            </iframe>
-                        </div> --}}
-                    </td>
-                    </tr>
-                    <tr></tr>
-                    <td>Komentar</td>
-                    <td>:</td>
-                    <td>{{ $list->komentar }}
-                    </td>
-                    </tr>
-                </table>
-            </div>
-            <!-- <div style="margin-right: 3%;"><button type="button" class="align-self-end btn btn-lg btn-primary"
-                style="background-color: #009818">Approve</button>
-        </div> -->
-        </div>
-
+            </tr>
+            <tr>
+                <td>Komentar</td>
+                <td>:</td>
+                <td>
+                    <textarea id="komen" cols="30" rows="4" readonly>{{ $list->komentar }}</textarea>
+                </td>
+            </tr>
+        </table>
     </div>
+</div>
 
-    @endsection
+@endsection

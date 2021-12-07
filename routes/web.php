@@ -69,16 +69,17 @@ require __DIR__.'/auth.php';
 
 Route::group(['middleware' => 'auth'], function() {
     Route::prefix('user')->name('user.')->group(function () {
-        Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index']);
+        Route::get('/', [ListEvaluasiKinerjaAkunController::class, 'index'])->name('home');
         Route::get('/tambah', [TambahEvaluasiController::class, 'index'])->name('tambah');
         Route::post('/tambah', [TambahEvaluasiController::class, 'store'])->name('store');
-        Route::get('/detail', [DetailEvaluasiKinerja::class, 'index'])->name('detail');
+        Route::get('/detail/{id}', [DetailEvaluasiKinerja::class, 'index'])->name('detail');
     });
 
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::get('/', [ListEvaluasiKinerjaController::class, 'index']);
+        Route::get('/', [ListEvaluasiKinerjaController::class, 'index'])->name('home');
         Route::post('/', [ListEvaluasiKinerjaController::class, 'search'])->name('search');
         Route::get('/detail/{id}', [AdminDetailKinerjaController::class, 'index'])->name('detail');
+        Route::post('/detail/{id}', [AdminDetailKinerjaController::class, 'store'])->name('store');
     });
 
 });

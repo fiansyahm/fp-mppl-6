@@ -17,7 +17,7 @@ class EvaluasiFactory extends Factory
             //
             'unit_id' => rand(2,5),
             'judul' => $this->faker->text(20),
-            'status' => rand(0,1),
+            'status' => rand(-1,1),
             'dokumen' => NULL,
             'komentar' => NULL,
             'tanggal' => now(),

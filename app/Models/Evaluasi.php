@@ -17,6 +17,7 @@ class Evaluasi extends Model
         'judul',
         'dokumen',
         'status',
+        'komentar',
         'tanggal'
     ];
 
