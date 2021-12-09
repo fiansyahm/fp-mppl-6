@@ -54,9 +54,10 @@ Admin
                 <td>
                     <div>
                         <object data="{{ asset('storage/'. $list->dokumen) }}" type="application/pdf">
-                            <iframe src="{{ asset('storage/'. $list->dokumen) }}" width="20%" height="15%" frameborder="0" marginwidth="0"
-                                marginheight="0" scrolling="no"
-                                style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+                            <iframe src="{{ asset('storage/'. $list->dokumen) }}" width="40%" height="30%"
+                                frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+                                style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;"
+                                allowFullScreen> </iframe>
                         </object>
                     </div>
 

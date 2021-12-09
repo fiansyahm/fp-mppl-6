@@ -49,6 +49,8 @@ Admin
                 <td>{{ $evaluasi->users->jabatan }}</td>
                 <td>{{ $evaluasi->tanggal }}</td>
                 <td class="text-center">
+                    <a class='badge badge-danger' href="{{ route('admin.delete', ['id' => $evaluasi->id]) }}"
+                        style="background-color : RED">DELETE</a>
                     <a class='badge badge-primary' href="{{ route('admin.detail', ['id' => $evaluasi->id]) }}"
                         style="background-color : #007BFF">DETAIL</a>
             </tr>

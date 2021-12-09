@@ -12,9 +12,9 @@
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
 
-</div>
+    </div>
     <div class="row">
         <div class="col-md-3">
             <div class="sidebar">
@@ -22,8 +22,13 @@
                     <!--Profile Image-->
                     <br>
                     <h3>{{$user->jabatan}}</h3>
+                    @if($user->isAdmin==1)
+                    <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2021/07/Dr-Umi-Laili-Yuhana-SKom-MSc-Sekretaris-Institut-Teknologi-Sepuluh-Nopember-SEKITS.jpeg"
+                        alt="profile_picture" class="avatar img-fluid rounded-circle" height="200px">
+                    @else
                     <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
                         alt="profile_picture" class="avatar img-fluid rounded-circle">
+                    @endif
                     <br><br>
                     <p>{{$user->nama}}</p>
                     <!--Profile Title & Descruption-->

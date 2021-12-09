@@ -34,12 +34,11 @@ class AuthenticatedSessionController extends Controller
 
         //for login redirect
         $isAdmin = Auth::user()->isAdmin;
-        if($isAdmin == 1){
+        if ($isAdmin == 1) {
             return redirect()->intended('/admin');
-        }else {
+        } else {
             return redirect()->intended('/user');
         }
-
     }
 
     /**

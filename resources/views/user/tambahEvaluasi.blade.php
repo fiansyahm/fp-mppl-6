@@ -33,7 +33,7 @@ User
                         data-height="1000" >
                     </div> -->
                     <div class="mt-5 text-right">
-                        <a href="{{ url()->previous() }}">Cancel</a>
+                        <a href="{{ route('user.home') }}">Cancel</a>
                         <button class="w-32 h-10 ml-4 text-white bg-blue-600 rounded hover:bg-blue-700">Create</button>
                     </div>
                 </div>

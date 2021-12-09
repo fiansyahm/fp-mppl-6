@@ -31,6 +31,6 @@ class TambahEvaluasiController extends Controller
 
         Evaluasi::create($validateData);
 
-        return redirect()->back();
+        return redirect()->route('user.home');
     }
 }
