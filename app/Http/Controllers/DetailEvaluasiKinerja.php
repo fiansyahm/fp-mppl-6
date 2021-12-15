@@ -22,5 +22,4 @@ class DetailEvaluasiKinerja extends Controller
             return view('user.detail',  compact('user','list'));
         }
     }
-
 }
