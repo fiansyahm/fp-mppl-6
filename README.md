@@ -6,3 +6,6 @@
 5. Buka file .env, ganti DB_DATABASE dgn nama_database_local
 6. php artisan migrate --seed
 7. php artisan serve
+
+# Database
+### Untuk database .sql bisa diliat di folder project dengan nama siekihproker.zip
